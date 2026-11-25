@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Alvin Atsegwasi CV, Africa Blueprint 2.0</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  :root {
+    --paper: #f9f9f7; --ink: #0e1726; --soft: #4a5566; --line: #dfe3e8;
+    --navy: #0b1422; --navy2: #13243c; --accent: #2d5e96; --accent-l: #8fb3dc; --gold: #c9a227;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #fff; }
+  body { font-family: Inter, sans-serif; color: var(--ink); font-size: 8.6pt; line-height: 1.5; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 210mm; height: 297mm; display: grid; grid-template-columns: 64mm 1fr; overflow: hidden; page-break-after: always; position: relative; }
+  .page:last-child { page-break-after: auto; }
+
+  /* Sidebar */
+  aside { background: var(--navy); color: #fff; padding: 0 0 12mm; display: flex; flex-direction: column; }
+  aside .photo { height: 70mm; background: url('alvin-portrait.jpg') center 18% / cover; }
+  aside .inner { padding: 7mm 7mm 0; display: flex; flex-direction: column; gap: 6mm; }
+  .side-h { font-size: 6.4pt; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--accent-l); padding-bottom: 2mm; border-bottom: 1px solid rgba(255,255,255,.14); margin-bottom: 3mm; }
+  aside p, aside li { color: rgba(255,255,255,.82); font-size: 8pt; }
+  aside ul { list-style: none; display: grid; gap: 1.6mm; }
+  aside li strong { display: block; color: #fff; font-weight: 500; }
+  .contact li { display: grid; gap: .3mm; }
+  .contact span { font-size: 6.4pt; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+  .chips { display: flex; flex-wrap: wrap; gap: 1.5mm; }
+  .chips span { border: 1px solid rgba(255,255,255,.22); padding: .8mm 2mm; font-size: 7.2pt; color: rgba(255,255,255,.88); }
+  .side-quote { margin-top: auto; padding: 0 7mm; font-family: Newsreader, serif; font-weight: 300; font-size: 13pt; line-height: 1.25; color: #fff; }
+  .side-quote small { display: block; margin-top: 2.5mm; font-family: Inter, sans-serif; font-size: 6.4pt; letter-spacing: .2em; text-transform: uppercase; color: var(--accent-l); }
+
+  /* Main */
+  main { background: var(--paper); padding: 10mm 12mm 8mm 11mm; display: flex; flex-direction: column; }
+  .event { display: flex; justify-content: space-between; align-items: center; border: 1px solid var(--line); background: #fff; padding: 2.4mm 3.5mm; font-size: 6.8pt; color: var(--soft); }
+  .event b { color: var(--ink); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+  .event i { font-family: Newsreader, serif; font-size: 9pt; color: var(--accent); }
+  .eyebrow { font-size: 6.6pt; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); }
+  h1 { font-family: Newsreader, serif; font-weight: 300; font-size: 32pt; line-height: .95; letter-spacing: -.01em; margin-top: 5mm; }
+  .role { margin-top: 3mm; font-size: 9.4pt; color: var(--soft); }
+  .role b { color: var(--ink); font-weight: 600; }
+  .tag { margin-top: 2mm; font-size: 6.6pt; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: var(--accent); }
+  section { margin-top: 5mm; }
+  h2 { display: flex; align-items: baseline; gap: 3mm; font-family: Newsreader, serif; font-weight: 400; font-size: 15pt; line-height: 1.1; padding-bottom: 2mm; border-bottom: 1px solid var(--ink); margin-bottom: 3.5mm; }
+  h2 em { font-size: 8.5pt; color: var(--accent); }
+  .lead { font-family: Newsreader, serif; font-weight: 300; font-size: 11.4pt; line-height: 1.38; }
+  .lead em { color: var(--accent); }
+  .body { color: var(--soft); margin-top: 3mm; }
+
+  .mandate { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); background: #fff; }
+  .mandate div { padding: 3.2mm 3.4mm; }
+  .mandate div + div { border-left: 1px solid var(--line); }
+  .mandate .n { font-family: Newsreader, serif; font-style: italic; color: var(--accent); font-size: 9pt; }
+  .mandate h3 { font-family: Newsreader, serif; font-weight: 400; font-size: 11.5pt; margin: .8mm 0 1.2mm; }
+  .mandate p { color: var(--soft); font-size: 7.7pt; line-height: 1.45; }
+
+  .job { display: grid; grid-template-columns: 1fr auto; column-gap: 4mm; padding: 2.8mm 0; border-bottom: 1px solid var(--line); }
+  .job:first-of-type { padding-top: 0; }
+  .job h3 { font-family: Newsreader, serif; font-weight: 400; font-size: 12pt; line-height: 1.2; }
+  .job .meta { font-size: 6.6pt; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); text-align: right; white-space: nowrap; padding-top: 1mm; }
+  .job .what { grid-column: 1 / -1; color: var(--soft); margin-top: 1mm; }
+  .job ul { grid-column: 1 / -1; margin: 1.6mm 0 0 3.6mm; color: var(--soft); display: grid; gap: .8mm; }
+  .job li::marker { color: var(--accent); }
+
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
+  .honour { border-left: 2px solid var(--gold); padding-left: 3mm; }
+  .honour + .honour { margin-top: 3mm; }
+  .honour b { display: block; font-family: Newsreader, serif; font-weight: 400; font-size: 11pt; }
+  .honour span { font-size: 6.4pt; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  .honour p { color: var(--soft); margin-top: .6mm; }
+
+  .topics { counter-reset: t; display: grid; gap: 2.6mm; }
+  .topics div { display: grid; grid-template-columns: 7mm 1fr; padding-bottom: 2.6mm; border-bottom: 1px solid var(--line); }
+  .topics div::before { counter-increment: t; content: "0" counter(t); font-family: Newsreader, serif; font-style: italic; color: var(--accent); font-size: 9pt; }
+  .topics b { font-family: Newsreader, serif; font-weight: 400; font-size: 11pt; display: block; }
+  .topics p { color: var(--soft); font-size: 7.8pt; }
+
+  footer { margin-top: auto; padding-top: 3mm; display: flex; justify-content: space-between; font-size: 6.4pt; letter-spacing: .14em; text-transform: uppercase; color: var(--soft); border-top: 1px solid var(--line); }
+
+  @media screen { body { background: #d9dde3; } .page { margin: 10mm auto; box-shadow: 0 10px 40px rgba(0,0,0,.18); } }
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 ============ -->
+<div class="page">
+  <aside>
+    <div class="photo" role="img" aria-label="Portrait of Alvin Atsegwasi"></div>
+    <div class="inner">
+      <div>
+        <p class="side-h">Contact</p>
+        <ul class="contact">
+          <li><span>Office</span>The Crownshield Group, Suite 207, Millennium Plaza, Herbert Macaulay Way, Abuja</li>
+          <li><span>Email</span>alvin@crownshieldgroup.org</li>
+          <li><span>Phone</span>+234 913 000 0337</li>
+          <li><span>Based</span>Abuja, Nigeria and United Kingdom</li>
+        </ul>
+      </div>
+      <div>
+        <p class="side-h">Current roles</p>
+        <ul>
+          <li><strong>Group CEO</strong>The Crownshield Group</li>
+          <li><strong>Founder</strong>1st Shield Security Services Ltd</li>
+          <li><strong>Co-Founder</strong>Africa Unconquered Foundation</li>
+          <li><strong>CEO</strong>UNIPASS Nigeria</li>
+        </ul>
+      </div>
+      <div>
+        <p class="side-h">Core strengths</p>
+        <div class="chips">
+          <span>Defence logistics</span><span>Procurement governance</span><span>Equipment accountability</span>
+          <span>Budget control</span><span>Audit readiness</span><span>Security operations</span>
+          <span>Armoury management</span><span>Training and inspection</span><span>Cross-border enterprise</span>
+          <span>Veterans' welfare</span>
+        </div>
+      </div>
+      <div>
+        <p class="side-h">Personal</p>
+        <p>Dual British and Nigerian national, from Edo State. Operates across Nigeria and the United Kingdom.</p>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <div class="event">
+      <span><b>Africa Blueprint 2.0</b> &nbsp;·&nbsp; Africa CEO Club</span>
+      <i>The Builders' Mandate: From Blueprint to Build</i>
+      <span>3 Dec 2026 &nbsp;·&nbsp; Transcorp Hilton, Abuja</span>
+    </div>
+
+    <p class="eyebrow" style="margin-top:5mm">Soldier · Entrepreneur · Advocate</p>
+    <h1>Alvin<br>Atsegwasi</h1>
+    <p class="role"><b>Group CEO, The Crownshield Group</b> &nbsp;·&nbsp; Defence Logistics and Procurement</p>
+
+    <section>
+      <h2>Profile</h2>
+      <p class="lead">A builder who learned his trade where plans are tested hardest. For ten years Alvin turned a British Army unit's paper entitlement into equipment that arrived <em>in the right condition, at the right time,</em> and accounted for down to the last item.</p>
+      <p class="body">He served a decade with the Royal Electrical and Mechanical Engineers (REME), leaving as Acting Technical Quartermaster Sergeant, the post responsible for a unit's entire equipment holding. For about nine years he has led The Crownshield Group in Abuja, bringing the same discipline to Nigerian security and defence procurement. He also leads ventures in UK security, veterans' welfare and education. His contribution to Africa's builders is simple: a blueprint is only as good as the accountability that carries it into the field.</p>
+    </section>
+
+    <section>
+      <h2>From blueprint to build <em>How he delivers</em></h2>
+      <div class="mandate">
+        <div>
+          <p class="n">01 · Blueprint</p>
+          <h3>Specify for the end user</h3>
+          <p>Requirements written for the field, not just for paper, from a formal Equipment Table of what a force needs.</p>
+        </div>
+        <div>
+          <p class="n">02 · Build</p>
+          <h3>Procure with discipline</h3>
+          <p>Budget control and audit trails to British Army standards, through licensed channels under Nigerian and UK law.</p>
+        </div>
+        <div>
+          <p class="n">03 · Sustain</p>
+          <h3>Control what arrives</h3>
+          <p>Storage, inspection and training built into every delivery, so equipment stays safe and fit for operations.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Leadership and enterprise</h2>
+      <div class="job">
+        <h3>The Crownshield Group</h3>
+        <p class="meta">Group CEO · Abuja · c. 9 years</p>
+        <p class="what">Equips and supports security and defence organisations, with operations in Nigeria and the United Kingdom.</p>
+        <ul>
+          <li>Supplies protective equipment, uniforms and field kit; vehicles, field logistics and sustainment; communications and command and control systems; surveillance and perimeter security technology.</li>
+          <li>Delivers training, inspection, armoury management and accountability systems, with every procurement through licensed and authorised channels under Nigerian and UK law.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>1st Shield Security Services Ltd</h3>
+        <p class="meta">Founder · United Kingdom</p>
+        <p class="what">An SIA licensed security company, run to the standards of accountability and care learned in uniform.</p>
+      </div>
+    </section>
+
+    <footer><span>Alvin Atsegwasi · Curriculum Vitae</span><span>1 / 2</span></footer>
+  </main>
+</div>
+
+<!-- ============ PAGE 2 ============ -->
+<div class="page">
+  <aside>
+    <div class="inner" style="padding-top:12mm">
+      <div>
+        <p class="side-h">At a glance</p>
+        <ul>
+          <li><strong>10 years</strong>British Army, REME</li>
+          <li><strong>c. 9 years</strong>Leading The Crownshield Group</li>
+          <li><strong>2 nations</strong>Served: the UK and Nigeria</li>
+          <li><strong>4 organisations</strong>Founded or led</li>
+          <li><strong>Multi-million pound</strong>Budgets held to account</li>
+        </ul>
+      </div>
+      <div>
+        <p class="side-h">Military qualifications</p>
+        <ul>
+          <li><strong>Technical Support Specialist</strong>Royal Electrical and Mechanical Engineers</li>
+          <li><strong>Acting Technical Quartermaster Sergeant</strong>Final post held</li>
+          <li><strong>Skill at Arms Instructor</strong>Qualified, unit armoury</li>
+        </ul>
+      </div>
+      <div>
+        <p class="side-h">Audit standards</p>
+        <ul>
+          <li><strong>Logistic Support Inspection</strong>External equipment and accounts audit</li>
+          <li><strong>Equipment Care Inspection</strong>Maintenance and fitness for operations</li>
+        </ul>
+      </div>
+    </div>
+    <p class="side-quote">"I have equipped soldiers. Now I equip forces."<small>Alvin Atsegwasi</small></p>
+  </aside>
+
+  <main>
+    <section style="margin-top:0">
+      <h2>Leadership and enterprise <em>continued</em></h2>
+      <div class="job">
+        <h3>Africa Unconquered Foundation</h3>
+        <p class="meta">Co-Founder · Nigeria</p>
+        <p class="what">Supports wounded, injured and sick Nigerian military personnel through recovery, sport and a renewed sense of purpose.</p>
+        <ul>
+          <li>Works with the Federal Government of Nigeria to prepare Team Nigeria for the Invictus Games.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>UNIPASS Nigeria</h3>
+        <p class="meta">CEO · Abuja</p>
+        <p class="what">Builds transparent, accountable pathways for Nigerian students seeking higher education abroad, with support for vulnerable groups. Launched in Abuja in 2025, with coverage in Champion Newspapers, Voice of Nigeria and National Accord.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Military service <em>British Army · 10 years</em></h2>
+      <div class="job">
+        <h3>Royal Electrical and Mechanical Engineers (REME)</h3>
+        <p class="meta">Technical Support Specialist</p>
+        <p class="what">Equipped battle groups, battalions and garrisons; left as Acting Technical Quartermaster Sergeant, responsible for a unit's entire equipment holding.</p>
+        <ul>
+          <li>Managed the unit Equipment Table, the formal list of everything a unit is entitled to hold, and ordered equipment, spares and weapons parts through official military supply chains.</li>
+          <li>Accountable for budgets worth millions of pounds sterling; every item justified, tracked and audited.</li>
+          <li>Within the Quartermaster's department, prepared the unit's equipment and accounts to pass external Logistic Support Inspections and Equipment Care Inspections.</li>
+          <li>As a Skill at Arms instructor in the unit armoury, inspected, stored and accounted for service rifles and made sure ammunition was held safely and to regulation.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Honours</h2>
+      <div class="two">
+        <div class="honour" style="margin-top:0">
+          <span>36 Engineer Regiment</span>
+          <b>Commanding Officer's Coin</b>
+          <p>For his work helping the regiment pass its Logistic Support Inspection.</p>
+        </div>
+        <div class="honour" style="margin-top:0">
+          <span>Operation TOSCA, Cyprus</span>
+          <b>UN Force Commander's Commendation</b>
+          <p>For making sure the battle group had every piece of equipment it needed.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contribution to The Builders' Mandate <em>Areas he can speak to</em></h2>
+      <div class="topics">
+        <div><span><b>Accountability is infrastructure.</b><p>Why audit trails, equipment tables and inspection regimes decide whether Africa's blueprints survive contact with delivery.</p></span></div>
+        <div><span><b>Building Africa's security capability.</b><p>Equipping and sustaining security and defence forces through lawful, transparent procurement that earns public trust.</p></span></div>
+        <div><span><b>Builders who served.</b><p>Bringing veterans, discipline and the care of those who come home wounded into Africa's enterprise story.</p></span></div>
+      </div>
+    </section>
+
+    <footer><span>Alvin Atsegwasi · Curriculum Vitae</span><span>2 / 2</span></footer>
+  </main>
+</div>
+
+</body>
+</html>
